@@ -1,0 +1,15 @@
+services:
+  ros2:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        UID: "${UID}"
+        GID: "${GID}"
+    image: ros2-jazzy-dev
+    container_name: ros2-jazzy-dev
+    volumes:
+      - ./src:/ros2_ws/src
+    working_dir: /ros2_ws
+    tty: true
+    user: "${UID}:${GID}"

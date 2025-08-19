@@ -1,0 +1,15 @@
+services:
+  cpp:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        UID: "${UID}"
+        GID: "${GID}"
+    image: cpp-dev-template
+    container_name: cpp-dev-template
+    volumes:
+      - ./src:/workspace/src
+    working_dir: /workspace
+    tty: true
+    user: "${UID}:${GID}"

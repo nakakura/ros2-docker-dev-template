@@ -9,7 +9,7 @@ services:
     image: cpp-dev-template
     container_name: cpp-dev-template
     volumes:
-      - ./src:/workspace/src
+      - ./:/workspace
     working_dir: /workspace
     tty: true
     user: "${UID}:${GID}"
